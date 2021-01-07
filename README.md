@@ -112,4 +112,3 @@ as following instructions:
 ## License
 
 MIT
-# blog.sigmie.com
