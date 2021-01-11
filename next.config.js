@@ -1,26 +1,8 @@
-const withMdxEnhanced = require("next-mdx-enhanced");
-const rehypePrism = require("@mapbox/rehype-prism");
+const withPlugins = require('next-compose-plugins');
 
-module.exports = withMdxEnhanced({
-  layoutPath: "src/layouts",
-  defaultLayout: true,
-  rehypePlugins: [rehypePrism],
-})({
-  pageExtensions: ["mdx", "tsx"],
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.module.rules.push(
-      ...[
-        {
-          test: /\.yml$/,
-          type: "json",
-          use: "yaml-loader",
-        },
-        {
-          test: /\.svg$/,
-          use: "@svgr/webpack",
-        },
-      ]
-    );
-    return config;
-  },
+// next.config.js
+const withOptimizedImages = require('next-optimized-images');
+
+module.exports = withOptimizedImages({
+  assetPrefix: '.',
 });

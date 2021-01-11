@@ -1,43 +1,49 @@
 {
-  "name": "my-app",
-  "version": "0.1.1",
+  "name": "nextjs-blog-starter",
+  "version": "0.2.0",
+  "description": "A Next.js template for a blog website.",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export -o ./dist",
-    "test": "jest"
+    "export": "next export"
   },
   "dependencies": {
-    "@mapbox/rehype-prism": "^0.5.0",
-    "@svgr/webpack": "^5.4.0",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "@types/js-yaml": "^3.12.5",
-    "autoprefixer": "^9",
-    "date-fns": "^2.11.1",
-    "gray-matter": "^4.0.2",
-    "js-yaml": "^3.14.0",
-    "next": "9.5.1",
-    "next-mdx-enhanced": "^3.1.0",
-    "normalize.css": "^8.0.1",
-    "postcss": "^7",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-instagram-embed": "^1.5.0",
-    "react-schemaorg": "^1.2.0",
-    "react-twitter-embed": "^3.0.3",
-    "react-youtube": "^7.11.3",
-    "schema-dts": "^0.6.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "clsx": "^1.1.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "lazysizes": "^5.2.2",
+    "lqip-loader": "^2.2.1",
+    "next": "10.0.3",
+    "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
+    "next-themes": "^0.0.10",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-markdown": "^5.0.3",
+    "react-syntax-highlighter": "^15.3.1",
+    "react-toggle-dark-mode": "^1.0.3",
+    "typeface-merriweather": "^1.1.13",
+    "typeface-open-sans": "^1.1.13",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.9",
-    "@types/node": "^13.11.0",
-    "@types/react": "^16.9.32",
-    "jest": "^26.3.0",
-    "ts-jest": "^26.2.0",
-    "typescript": "^3.8.3",
-    "yaml-loader": "^0.6.0"
-  }
+    "@tailwindcss/typography": "^0.3.1",
+    "autoprefixer": "^10.0.4",
+    "gray-matter": "^4.0.2",
+    "postcss": "^8.1.10",
+    "tailwindcss": "^2.0.1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jfelix61/nextjs-starter-blog.git"
+  },
+  "homepage": "https://github.com/Jfelix61/nextjs-starter-blog#readme",
+  "keywords": [
+    "next.js",
+    "blog",
+    "template"
+  ]
 }
