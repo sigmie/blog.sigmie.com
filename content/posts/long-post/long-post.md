@@ -1,7 +1,9 @@
 ---
-title: Long Post
+title: Long Poste
 date: 2020-07-28T22:40:32.169Z
 description: Who doesn't like a long post showcasing the different headings?
+author: Nico
+twitter: nicoorfi
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

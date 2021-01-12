@@ -1,7 +1,8 @@
 
 export default function LogoMobile({ }) {
     return (
-        <div className="block lg:hidden h-auto w-10">
+        <a className="block lg:hidden h-auto w-10" href="/">
+
             <svg viewBox="0 0 80 80" version="1.1">
                 <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g fillRule="nonzero">
@@ -22,7 +23,7 @@ export default function LogoMobile({ }) {
                 </g>
             </svg>
 
-        </div >
+        </a >
     );
 }
 

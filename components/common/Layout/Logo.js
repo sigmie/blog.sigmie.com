@@ -1,7 +1,7 @@
 
 export default function Logo({ }) {
     return (
-        <div className="hidden lg:block w-40 h-auto">
+        <a className="hidden lg:block w-40 h-auto" href="/">
             <svg  viewBox="0 0 330 80" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g>
@@ -41,7 +41,7 @@ export default function Logo({ }) {
                 </g>
             </g>
             </svg>
-        </div >
+        </a >
     );
 }
 

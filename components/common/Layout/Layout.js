@@ -8,19 +8,17 @@ import Navigation from "./Navigation";
 
 export function Layout({ children }) {
   return (
-    <div className="w-full min-h-screen dark:bg-gray-700 dark:text-white">
+    <div className="w-full min-h-screen">
 
         <nav className="bg-white border-b border-gray-200">
           <Navigation />
         </nav>
 
-      <div className="max-w-screen-sm px-4 py-12 mx-auto antialiased font-body">
+      <div className="max-w-screen-sm px-4 py-12 mx-auto antialiased text-semibold text-gray-800">
         <Header />
         <main>{children}</main>
-        <footer className="text-lg font-light">
-          © {new Date().getFullYear()}, Built with{" "}
-          <a href="https://nextjs.org/">Next.js</a>
-          &#128293;
+        <footer className="text-lg">
+          {/* © {new Date().getFullYear()} */}
         </footer>
       </div>
     </div>
@@ -54,44 +52,14 @@ const Header = () => {
       <div className={"max-w-md"}>
         {isRoot ? <LargeTitle /> : <SmallTitle />}
       </div>
-      {mounted && (
-        <DarkModeSwitch
-          checked={isDarkMode}
-          onChange={toggleDarkMode}
-          className={isRoot ? 28 : 24}
-        />
-      )}
     </header>
   );
 };
 
 const LargeTitle = () => (
-  <h1>
-    <Link href="/">
-      <a
-        className={clsx(
-          "text-3xl font-black leading-none text-black no-underline font-display",
-          "sm:text-5xl",
-          "dark:text-white"
-        )}
-      >
-        Next.Js Starter Blog
-      </a>
-    </Link>
-  </h1>
+  <h1></h1>
 );
 
 const SmallTitle = () => (
-  <h1>
-    <Link href="/">
-      <a
-        className={clsx(
-          "text-2xl font-black text-black no-underline font-display",
-          "dark:text-white"
-        )}
-      >
-        Next.Js Starter Blog
-      </a>
-    </Link>
-  </h1>
+  <h1></h1>
 );
