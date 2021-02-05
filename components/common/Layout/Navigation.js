@@ -30,8 +30,8 @@ export default function Navigation() {
           </div>
           <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <a href="https://app.sigmie.com" className="text-gray-400 px-3 py-2 rounded-md text-sm font-medium">Application</a>
-                <a href="https://docs.sigmie.com" className="text-gray-400 px-3 py-2 rounded-md text-sm font-medium">Documentation</a>
+                <a href="https://app.sigmie.com" className="text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Application</a>
+                <a href="https://docs.sigmie.com" className="text-gray-500 px-3 py-2 rounded-md text-sm font-medium">Documentation</a>
               </div>
           </div>
         </div>
@@ -39,8 +39,8 @@ export default function Navigation() {
 
       <div className={`sm:hidden ${open ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a href="https://app.sigmie.com" className="text-gray-400 block px-3 py-2 rounded-md text-base font-medium">Application</a>
-          <a href="https://docs.sigmie.com" className="text-gray-400 block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+          <a href="https://app.sigmie.com" className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium">Application</a>
+          <a href="https://docs.sigmie.com" className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
         </div>
       </div>
     </nav>
