@@ -7,10 +7,10 @@ export default function Home({ posts }) {
   return (
     <Layout>
       <SEO title="All posts" />
-      <ul class="divide-y divide-gray-200">
+      <ul className="divide-y divide-gray-200">
       {posts.map(({ frontmatter: { title, description, date, author }, slug }) => (
-      <li class="px-4 py-4 sm:px-0">
-        <article key={slug}>
+      <li key={slug} className="px-4 py-4 sm:px-0">
+        <article>
           <header className="mb-2">
             <h3 className="mb-2">
               <Link href={"/post/[slug]"} as={`/post/${slug}`}>
