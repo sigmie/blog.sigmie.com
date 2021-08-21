@@ -31,29 +31,38 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
           renderers={{ code: CodeBlock, image: MarkdownImage }}
         />
         <hr className="mt-4" />
-        <footer className="flex">
-          <Bio className="mt-8 mb-16 self-center" />
-        </footer>
       </article>
 
-      <nav className="flex flex-wrap justify-between mb-10 mt-4">
+      <nav className="flex justify-between mb-10 mt-4">
         {previousPost ? (
+          // <Link href={"/post/[slug]"} as={`/post/${previousPost.slug}`}>
+          //   <a className="text-lg text-semibold">
+          //     ← {previousPost.frontmatter.title}
+          //   </a>
+          // </Link>
           <Link href={"/post/[slug]"} as={`/post/${previousPost.slug}`}>
-            <a className="text-lg font-bold">
-              ← {previousPost.frontmatter.title}
+            <a className="text-lg text-semibold">
+              ← Previous post
             </a>
           </Link>
         ) : (
             <div />
           )}
         {nextPost ? (
+          // <Link href={"/post/[slug]"} as={`/post/${nextPost.slug}`}>
+          //   <a className="text-lg text-semibold">{nextPost.frontmatter.title} →</a>
+          // </Link>
           <Link href={"/post/[slug]"} as={`/post/${nextPost.slug}`}>
-            <a className="text-lg font-bold">{nextPost.frontmatter.title} →</a>
+            <a className="text-lg text-semibold">Next post</a>
           </Link>
         ) : (
             <div />
           )}
       </nav>
+
+        <footer className="flex-row justify-center items-center w-full">
+          <Bio className="" />
+        </footer>
     </Layout>
   );
 }
