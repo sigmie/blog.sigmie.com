@@ -1,17 +1,17 @@
 module.exports = {
     // Your token from https://torchlight.dev
-    token: process.env.TORCHLIGHT_TOKEN,
+    token: 'torch_ImyRgG5kK5xOpXpgqbMtq8ZrYDQLG18iVFlL4O85',
 
     // The Torchlight client caches highlighted code blocks. Here you
     // can define which directory you'd like to use. You'll likely
     // want to add this directory to your .gitignore. Set to
     // `false` to use an in-memory cache. You may also
     // provide a full cache implementation.
-    cache: 'cache',
+    cache: false,
 
     // Which theme you want to use. You can find all of the themes at
     // https://torchlight.dev/docs/themes.
-    theme: 'material-theme-palenight',
+    theme: 'moonlight-ii',
 
     // The Host of the API.
     host: 'https://api.torchlight.dev',

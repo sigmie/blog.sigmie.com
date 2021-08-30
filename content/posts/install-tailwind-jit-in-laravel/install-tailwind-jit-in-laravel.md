@@ -68,7 +68,7 @@ $ npm run hot
 ```
 
 you should see the following output in your command line:
-```console
+```
 > hot
 > TAILWIND_MODE=watch mix watch --hot
 
