@@ -7,22 +7,33 @@ export default function Home({ posts }) {
   return (
     <Layout>
       <SEO title="All posts" />
-      <ul className="divide-y divide-gray-200">
+
+<header className="pb-9 sm:pb-16 sm:text-center">
+  <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-gray-900 font-extrabold">Blog</h1>
+  <p className="text-lg font-normal">All the Sigmie news and knowledge in one place.</p>
+  </header>
+
+      <ul className="divide-y divide-gray-300">
       {posts.map(({ frontmatter: { title, description, date, author }, slug }) => (
-      <li key={slug} className="px-4 py-4 sm:px-0">
+      <li key={slug} className="py-4 sm:px-0">
         <article>
           <header className="mb-2">
             <h3 className="mb-2">
               <Link href={"/post/[slug]"} as={`/post/${slug}`}>
-                <a className="text-xl font-semibold text-gray-600 font-display">
+                <a className="text-xl font-bold text-black hover:no-underline">
                   {title}
                 </a>
               </Link>
             </h3>
-            <span className="text-sm">{date}&nbsp;-&nbsp;{author}</span>
+            <span className="text-sm font-semibold text-gray-500">{date}</span>
           </header>
           <section>
-            <p className="mb-8 text-lg">{description}</p>
+            <p className="mb-8 font-normal text-base">{description}</p>
+              <Link href={"/post/[slug]"} as={`/post/${slug}`}>
+                <a className="text-sm hover:no-underline cursor-pointer font-bold text-orange-500">
+                  Read more
+                </a>
+              </Link>
           </section>
         </article>
       </li>

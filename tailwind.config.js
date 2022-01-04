@@ -74,6 +74,18 @@ module.exports = {
         'theme-gray-700': '#cdd6df',
         'theme-gray-800': '#c6d0da',
    
+                'theme-accent': {
+                    100: '#FAFAFA',
+                    200: '#EAEAEA',
+                    300: '#999',
+                    400: '#888',
+                    500: '#666',
+                    600: '#444',
+                    700: '#333',
+                    800: '#111',
+                    900: '#000',
+                }
+
 
       },
       fontSize: {

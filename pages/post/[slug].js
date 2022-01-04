@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ReactMarkdown from "react-markdown/with-html";
+import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 
@@ -17,43 +17,52 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
       <article>
         <div className="flex flex-row">
           <header className="mb-8">
-            <h1 className="mb-2 text-5xl font-black leading-none font-display">
+            <h1 className="mb-2 text-3xl font-bold leading-none">
               {frontmatter.title}
             </h1>
-            <p className="text-sm">{frontmatter.date}</p>
+            <span className="text-sm font-semibold text-gray-500">{frontmatter.date}</span>
           </header>
         </div>
 
         <ReactMarkdown
-          className="mb-4 prose lg:prose-lg"
-          escapeHtml={false}
-          source={post.content}
-          renderers={{ code: CodeBlock, image: MarkdownImage }}
+          className="mb-4 prose lg:prose-lg font-"
+          skipHtml={false}
+    components={{
+      code({node, inline, className, children, ...props}) {
+        const match = /language-(\w+)/.exec(className || '')
+        return !inline && match ? (
+          <SyntaxHighlighter
+            children={String(children).replace(/\n$/, '')}
+            style={style}
+            language={match[1]}
+            PreTag="div"
+            {...props}
+          />
+        ) : (
+          <code className={className} {...props}>
+            {children}
+          </code>
+        )
+      }
+    }}
+          children={post.content}
         />
         <hr className="mt-4" />
       </article>
 
       <nav className="flex justify-between mb-10 mt-4">
         {previousPost ? (
-          // <Link href={"/post/[slug]"} as={`/post/${previousPost.slug}`}>
-          //   <a className="text-lg text-semibold">
-          //     ← {previousPost.frontmatter.title}
-          //   </a>
-          // </Link>
           <Link href={"/post/[slug]"} as={`/post/${previousPost.slug}`}>
-            <a className="text-lg text-semibold">
-              ← Previous post
+            <a className="text-md font-semibold hover:no-underline text-orange-500 hover:text-orange-400">
+              Previous post
             </a>
           </Link>
         ) : (
             <div />
           )}
         {nextPost ? (
-          // <Link href={"/post/[slug]"} as={`/post/${nextPost.slug}`}>
-          //   <a className="text-lg text-semibold">{nextPost.frontmatter.title} →</a>
-          // </Link>
           <Link href={"/post/[slug]"} as={`/post/${nextPost.slug}`}>
-            <a className="text-lg text-semibold">Next post</a>
+            <a className="text-md font-semibold hover:no-underline text-orange-500 hover:text-orange-400">Next post</a>
           </Link>
         ) : (
             <div />
@@ -89,21 +98,3 @@ export async function getStaticProps({ params: { slug } }) {
 
   return { props: postData };
 }
-
-const CodeBlock = ({ language, value }) => {
-  return (
-    <SyntaxHighlighter style={style} language={language}>
-      {value}
-    </SyntaxHighlighter>
-  );
-};
-
-const MarkdownImage = ({ alt, src }) => (
-  <Image
-    alt={alt}
-    src={require(`../../content/assets/${src}`)}
-    webpSrc={require(`../../content/assets/${src}?webp`)}
-    previewSrc={require(`../../content/assets/${src}?lqip`)}
-    className="w-full"
-  />
-);
