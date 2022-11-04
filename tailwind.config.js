@@ -37,6 +37,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+                orange: {
+                    100: '#FEDAD5',
+                    200: '#FEC4BB',
+                    300: '#F08E8D',
+                    400: '#FF836F',
+                    500: '#FF6248',
+                    600: '#FB4D31',
+                    700: '#EA3B1F',
+                    800: '#E23514',
+                    900: '#DC2705',
+                },
+
         'theme-orange-light-100': '#ffefed',
         'theme-orange-light-200': '#ffe0da',
         'theme-orange-light-300': '#ffd0c8',

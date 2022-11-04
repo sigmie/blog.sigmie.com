@@ -6,7 +6,7 @@ import { getSortedPosts } from "@utils/posts";
 export default function Home({ posts }) {
   return (
     <Layout>
-      <SEO title="All posts" />
+      <SEO title="All posts" image="cards/sigmie.png" />
 
 <header className="pb-9 sm:pb-16 sm:text-center">
   <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-gray-900 font-extrabold">Blog</h1>
@@ -30,7 +30,7 @@ export default function Home({ posts }) {
           <section>
             <p className="mb-8 font-normal text-base">{description}</p>
               <Link href={"/post/[slug]"} as={`/post/${slug}`}>
-                <a className="text-sm hover:no-underline cursor-pointer font-bold text-orange-500">
+                <a className="text-sm hover:no-underline cursor-pointer font-semibold text-orange-500">
                   Read more
                 </a>
               </Link>

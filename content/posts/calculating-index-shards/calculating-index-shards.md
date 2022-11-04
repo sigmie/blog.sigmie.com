@@ -2,6 +2,7 @@
 title: Elasticsearch shards rules
 description: Rules for picking the correct shards number for your Elasticsearch indices.
 date: 2021-08-30T00:00:00.000Z
+image: 'cards/elasticsearch-shard-rules.png'
 ---
 
 About some time ago, I took a deep look into Elasticsearch shards trying to simplify
